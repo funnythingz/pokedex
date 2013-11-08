@@ -1,9 +1,5 @@
 {
-  "fire": "2",
-  "water": "0.5",
-  "grass": "0.5",
-  "poison": "0.5",
-  "ground": "2",
-  "rock": "2",
-  "dragon": "0.5"
+  "very_effective": ["fire", "ground", "rock"],
+  "not_too_effective": ["water", "grass", "poison", "dragon"],
+  "no_effect": null
 }

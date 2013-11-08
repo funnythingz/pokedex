@@ -1,5 +1,5 @@
 {
-  "rock": "0.5",
-  "ghost": "0",
-  "steel": "0.5"
+  "very_effective": null,
+  "not_too_effective": ["rock", "steel"],
+  "no_effect": ["ghost"]
 }

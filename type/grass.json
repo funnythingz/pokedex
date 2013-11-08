@@ -1,12 +1,5 @@
 {
-  "fire": "0.5",
-  "water": "2",
-  "grass": "0.5",
-  "poison": "0.5",
-  "ground": "2",
-  "flying": "0.5",
-  "bug": "0.5",
-  "rock": "2",
-  "dragon": "0.5",
-  "steel": "0.5"
+  "very_effective": ["water", "ground", "rock"],
+  "not_too_effective": ["fire", "grass", "poison", "flying", "bug", "dragon", "steel"],
+  "no_effect": null
 }
