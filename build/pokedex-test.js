@@ -79,6 +79,23 @@ var DDD;
 (function (DDD) {
     var expect = chai.expect;
 
+    describe("Name", function () {
+        var mewtwo = new DDD.Name('ミュウツー');
+        var mew = new DDD.Name('ミュウ');
+
+        it("should be mewtwo to equal `ミュウツー`", function () {
+            expect(mewtwo.getName()).to.equal('ミュウツー');
+        });
+
+        it("should be mewtwo to not equal to mew", function () {
+            expect(mewtwo.getName()).to.not.equal(mew.getName());
+        });
+    });
+})(DDD || (DDD = {}));
+;var DDD;
+(function (DDD) {
+    var expect = chai.expect;
+
     describe("Pokemon", function () {
         var id_150 = new DDD.PokemonID('150');
         var mewtwo = new DDD.Pokemon(id_150, new DDD.Name('ミュウツー'));
