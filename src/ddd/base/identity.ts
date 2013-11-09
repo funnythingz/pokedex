@@ -4,9 +4,7 @@ module DDD {
 
     export class Identity<T> implements IIdentity {
 
-        constructor(
-            private value: T
-        ) {}
+        constructor(private value: T) {}
 
         getValue(): string {
             return this.value.toString();
