@@ -32,6 +32,19 @@ var DDD;
     })();
     DDD.Identity = Identity;
 })(DDD || (DDD = {}));
+;var DDD;
+(function (DDD) {
+    var Name = (function () {
+        function Name(value) {
+            this.value = value;
+        }
+        Name.prototype.getName = function () {
+            return this.value.toString();
+        };
+        return Name;
+    })();
+    DDD.Name = Name;
+})(DDD || (DDD = {}));
 ;var __extends = this.__extends || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
@@ -42,9 +55,13 @@ var DDD;
 (function (DDD) {
     var Pokemon = (function (_super) {
         __extends(Pokemon, _super);
-        function Pokemon(identity) {
+        function Pokemon(identity, name) {
             _super.call(this, identity);
+            this.name = name;
         }
+        Pokemon.prototype.getName = function () {
+            return this.name.getName();
+        };
         return Pokemon;
     })(DDD.Entity);
     DDD.Pokemon = Pokemon;

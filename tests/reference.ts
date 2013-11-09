@@ -5,3 +5,4 @@
 /// <reference path="../src/ddd/base/identity.ts" />
 
 /// <reference path="../src/ddd/domain/pokemon.ts" />
+/// <reference path="../src/ddd/domain/name.ts" />

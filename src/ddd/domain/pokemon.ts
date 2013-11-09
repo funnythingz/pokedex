@@ -4,8 +4,13 @@ module DDD {
 
     export class Pokemon extends Entity<Identity<string>> {
 
-        constructor(identity: Identity<string>) {
+        constructor(identity: Identity<string>,
+                    private name: Name) {
             super(identity);
+        }
+
+        getName(): string {
+            return this.name.getName();
         }
 
     }

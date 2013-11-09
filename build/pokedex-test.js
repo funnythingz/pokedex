@@ -32,6 +32,19 @@ var DDD;
     })();
     DDD.Identity = Identity;
 })(DDD || (DDD = {}));
+;var DDD;
+(function (DDD) {
+    var Name = (function () {
+        function Name(value) {
+            this.value = value;
+        }
+        Name.prototype.getName = function () {
+            return this.value.toString();
+        };
+        return Name;
+    })();
+    DDD.Name = Name;
+})(DDD || (DDD = {}));
 ;var __extends = this.__extends || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
@@ -42,9 +55,13 @@ var DDD;
 (function (DDD) {
     var Pokemon = (function (_super) {
         __extends(Pokemon, _super);
-        function Pokemon(identity) {
+        function Pokemon(identity, name) {
             _super.call(this, identity);
+            this.name = name;
         }
+        Pokemon.prototype.getName = function () {
+            return this.name.getName();
+        };
         return Pokemon;
     })(DDD.Entity);
     DDD.Pokemon = Pokemon;
@@ -63,22 +80,30 @@ var DDD;
     var expect = chai.expect;
 
     describe("Pokemon", function () {
-        var id_001 = new DDD.PokemonID('001');
-        var pokemon_1 = new DDD.Pokemon(id_001);
+        var id_150 = new DDD.PokemonID('150');
+        var mewtwo = new DDD.Pokemon(id_150, new DDD.Name('ミュウツー'));
 
-        var id_002 = new DDD.PokemonID('002');
-        var pokemon_2 = new DDD.Pokemon(id_002);
+        var id_151 = new DDD.PokemonID('151');
+        var mew = new DDD.Pokemon(id_151, new DDD.Name('ミュウ'));
 
-        it("should be pokemon_1 has id_001", function () {
-            expect(pokemon_1.getIdentity()).to.equals(id_001);
+        it("should be mewtwo has id_150", function () {
+            expect(mewtwo.getIdentity()).to.equals(id_150);
         });
 
-        it("should be pokemon_1 equals to pokemon_1", function () {
-            expect(pokemon_1.equals(pokemon_1)).to.be.true;
+        it("should be mewtwo equals to mewtwo", function () {
+            expect(mewtwo.equals(mewtwo)).to.be.true;
         });
 
-        it("should be pokemon_1 not equals to pokemon_2", function () {
-            expect(pokemon_1.equals(pokemon_2)).to.not.be.true;
+        it("should be mewtwo not equals to mew", function () {
+            expect(mewtwo.equals(mew)).to.not.be.true;
+        });
+
+        it("should be mewtwo has name `ミュウツー`", function () {
+            expect(mewtwo.getName()).to.equals('ミュウツー');
+        });
+
+        it("should be mew has name `ミュウ`", function () {
+            expect(mew.getName()).to.equals('ミュウ');
         });
     });
 })(DDD || (DDD = {}));
