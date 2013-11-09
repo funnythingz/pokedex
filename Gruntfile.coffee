@@ -7,21 +7,25 @@ module.exports = (grunt)->
         src: ['src/**/*.js']
         dest: 'build/pokedex.js'
 
+      test:
+        src: ['build/pokedex.js', 'tests/**/*.js']
+        dest: 'build/pokedex-test.js'
+
       options:
         separator: ';'
 
     typescript:
       base:
-        src: ['src/**/*.ts']
+        src: ['src/**/*.ts', 'tests/**/*.ts']
 
     watch:
       ts:
-        files: ['src/**/*.ts']
+        files: ['src/**/*.ts', 'tests/**/*.ts']
         tasks: ['typescript', 'concat', 'clean']
         options:
           atBegin: true
 
-    clean: ['src/**/*.js']
+    clean: ['src/**/*.js', 'tests/**/*.js']
 
   })
 
