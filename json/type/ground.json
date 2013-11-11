@@ -1,0 +1,5 @@
+{
+  "very_effective": ["fire", "electric", "poison", "rock", "steel"],
+  "not_too_effective": ["grass", "bug"],
+  "no_effect": ["flying"]
+}

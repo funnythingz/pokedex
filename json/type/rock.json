@@ -1,0 +1,5 @@
+{
+  "very_effective": ["fire", "ice", "flying", "bug"],
+  "not_too_effective": ["fighting", "ground", "steel"],
+  "no_effect": null
+}

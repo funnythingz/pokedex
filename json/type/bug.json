@@ -1,0 +1,5 @@
+{
+  "very_effective": ["grass", "psychic", "dark"],
+  "not_too_effective": ["fire", "fighting", "poison", "flying", "ghost", "steel", "fairy"],
+  "no_effect": null
+}

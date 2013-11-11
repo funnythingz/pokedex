@@ -1,0 +1,5 @@
+{
+  "very_effective": ["fighting", "dragon", "dark"],
+  "not_too_effective": ["fire", "poison", steel],
+  "no_effect": null
+}
