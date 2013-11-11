@@ -1,10 +1,10 @@
 /// <reference path="../../reference.ts" />
 
-module DDD {
+module POKEDEX {
 
-    export class Pokemon extends Entity<Identity<string>> {
+    export class Pokemon extends DDD.Entity<DDD.Identity<string>> {
 
-        constructor(identity: Identity<string>,
+        constructor(identity: DDD.Identity<string>,
                     private name: Name) {
             super(identity);
         }
@@ -15,7 +15,7 @@ module DDD {
 
     }
 
-    export class PokemonID extends Identity<string> {
+    export class PokemonID extends DDD.Identity<string> {
 
         constructor(value: string) {
             super(value);

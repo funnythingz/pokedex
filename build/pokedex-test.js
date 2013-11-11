@@ -32,8 +32,8 @@ var DDD;
     })();
     DDD.Identity = Identity;
 })(DDD || (DDD = {}));
-;var DDD;
-(function (DDD) {
+;var POKEDEX;
+(function (POKEDEX) {
     var Name = (function () {
         function Name(value) {
             this.value = value;
@@ -43,16 +43,16 @@ var DDD;
         };
         return Name;
     })();
-    DDD.Name = Name;
-})(DDD || (DDD = {}));
+    POKEDEX.Name = Name;
+})(POKEDEX || (POKEDEX = {}));
 ;var __extends = this.__extends || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
     __.prototype = b.prototype;
     d.prototype = new __();
 };
-var DDD;
-(function (DDD) {
+var POKEDEX;
+(function (POKEDEX) {
     var Pokemon = (function (_super) {
         __extends(Pokemon, _super);
         function Pokemon(identity, name) {
@@ -64,7 +64,7 @@ var DDD;
         };
         return Pokemon;
     })(DDD.Entity);
-    DDD.Pokemon = Pokemon;
+    POKEDEX.Pokemon = Pokemon;
 
     var PokemonID = (function (_super) {
         __extends(PokemonID, _super);
@@ -73,15 +73,15 @@ var DDD;
         }
         return PokemonID;
     })(DDD.Identity);
-    DDD.PokemonID = PokemonID;
-})(DDD || (DDD = {}));
-;var DDD;
-(function (DDD) {
+    POKEDEX.PokemonID = PokemonID;
+})(POKEDEX || (POKEDEX = {}));
+;var POKEDEX;
+(function (POKEDEX) {
     var expect = chai.expect;
 
     describe("Name", function () {
-        var mewtwo = new DDD.Name('ミュウツー');
-        var mew = new DDD.Name('ミュウ');
+        var mewtwo = new POKEDEX.Name('ミュウツー');
+        var mew = new POKEDEX.Name('ミュウ');
 
         it("should be mewtwo to equal `ミュウツー`", function () {
             expect(mewtwo.getName()).to.equal('ミュウツー');
@@ -91,17 +91,17 @@ var DDD;
             expect(mewtwo.getName()).to.not.equal(mew.getName());
         });
     });
-})(DDD || (DDD = {}));
-;var DDD;
-(function (DDD) {
+})(POKEDEX || (POKEDEX = {}));
+;var POKEDEX;
+(function (POKEDEX) {
     var expect = chai.expect;
 
     describe("Pokemon", function () {
-        var id_150 = new DDD.PokemonID('150');
-        var mewtwo = new DDD.Pokemon(id_150, new DDD.Name('ミュウツー'));
+        var id_150 = new POKEDEX.PokemonID('150');
+        var mewtwo = new POKEDEX.Pokemon(id_150, new POKEDEX.Name('ミュウツー'));
 
-        var id_151 = new DDD.PokemonID('151');
-        var mew = new DDD.Pokemon(id_151, new DDD.Name('ミュウ'));
+        var id_151 = new POKEDEX.PokemonID('151');
+        var mew = new POKEDEX.Pokemon(id_151, new POKEDEX.Name('ミュウ'));
 
         it("should be mewtwo has id_150", function () {
             expect(mewtwo.getIdentity()).to.equals(id_150);
@@ -123,4 +123,4 @@ var DDD;
             expect(mew.getName()).to.equals('ミュウ');
         });
     });
-})(DDD || (DDD = {}));
+})(POKEDEX || (POKEDEX = {}));

@@ -1,6 +1,6 @@
 /// <reference path="../../reference.ts" />
 
-module DDD {
+module POKEDEX {
 
     export class Name {
 

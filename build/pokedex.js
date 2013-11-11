@@ -32,8 +32,8 @@ var DDD;
     })();
     DDD.Identity = Identity;
 })(DDD || (DDD = {}));
-;var DDD;
-(function (DDD) {
+;var POKEDEX;
+(function (POKEDEX) {
     var Name = (function () {
         function Name(value) {
             this.value = value;
@@ -43,16 +43,16 @@ var DDD;
         };
         return Name;
     })();
-    DDD.Name = Name;
-})(DDD || (DDD = {}));
+    POKEDEX.Name = Name;
+})(POKEDEX || (POKEDEX = {}));
 ;var __extends = this.__extends || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
     __.prototype = b.prototype;
     d.prototype = new __();
 };
-var DDD;
-(function (DDD) {
+var POKEDEX;
+(function (POKEDEX) {
     var Pokemon = (function (_super) {
         __extends(Pokemon, _super);
         function Pokemon(identity, name) {
@@ -64,7 +64,7 @@ var DDD;
         };
         return Pokemon;
     })(DDD.Entity);
-    DDD.Pokemon = Pokemon;
+    POKEDEX.Pokemon = Pokemon;
 
     var PokemonID = (function (_super) {
         __extends(PokemonID, _super);
@@ -73,5 +73,5 @@ var DDD;
         }
         return PokemonID;
     })(DDD.Identity);
-    DDD.PokemonID = PokemonID;
-})(DDD || (DDD = {}));
+    POKEDEX.PokemonID = PokemonID;
+})(POKEDEX || (POKEDEX = {}));
