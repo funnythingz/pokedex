@@ -1,0 +1,5 @@
+{
+  "very_effective": ["normal", "ice", "rock", "dark", "steel"],
+  "not_too_effective": ["poison", "flying", "psychic", "bug", "fairy"],
+  "no_effect": ["ghost"]
+}
