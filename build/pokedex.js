@@ -34,16 +34,29 @@ var DDD;
 })(DDD || (DDD = {}));
 ;var POKEDEX;
 (function (POKEDEX) {
-    var Name = (function () {
-        function Name(value) {
-            this.value = value;
+    var PokemonName = (function () {
+        function PokemonName(name) {
+            this.name = name;
         }
-        Name.prototype.getName = function () {
-            return this.value.toString();
+        PokemonName.prototype.getPokemonName = function () {
+            return this.name;
         };
-        return Name;
+        return PokemonName;
     })();
-    POKEDEX.Name = Name;
+    POKEDEX.PokemonName = PokemonName;
+})(POKEDEX || (POKEDEX = {}));
+;var POKEDEX;
+(function (POKEDEX) {
+    var PokemonNo = (function () {
+        function PokemonNo(no) {
+            this.no = no;
+        }
+        PokemonNo.prototype.getNo = function () {
+            return this.no;
+        };
+        return PokemonNo;
+    })();
+    POKEDEX.PokemonNo = PokemonNo;
 })(POKEDEX || (POKEDEX = {}));
 ;var __extends = this.__extends || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -60,7 +73,7 @@ var POKEDEX;
             this.name = name;
         }
         Pokemon.prototype.getName = function () {
-            return this.name.getName();
+            return this.name.getPokemonName();
         };
         return Pokemon;
     })(DDD.Entity);

@@ -34,16 +34,29 @@ var DDD;
 })(DDD || (DDD = {}));
 ;var POKEDEX;
 (function (POKEDEX) {
-    var Name = (function () {
-        function Name(value) {
-            this.value = value;
+    var PokemonName = (function () {
+        function PokemonName(name) {
+            this.name = name;
         }
-        Name.prototype.getName = function () {
-            return this.value.toString();
+        PokemonName.prototype.getPokemonName = function () {
+            return this.name;
         };
-        return Name;
+        return PokemonName;
     })();
-    POKEDEX.Name = Name;
+    POKEDEX.PokemonName = PokemonName;
+})(POKEDEX || (POKEDEX = {}));
+;var POKEDEX;
+(function (POKEDEX) {
+    var PokemonNo = (function () {
+        function PokemonNo(no) {
+            this.no = no;
+        }
+        PokemonNo.prototype.getNo = function () {
+            return this.no;
+        };
+        return PokemonNo;
+    })();
+    POKEDEX.PokemonNo = PokemonNo;
 })(POKEDEX || (POKEDEX = {}));
 ;var __extends = this.__extends || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -60,7 +73,7 @@ var POKEDEX;
             this.name = name;
         }
         Pokemon.prototype.getName = function () {
-            return this.name.getName();
+            return this.name.getPokemonName();
         };
         return Pokemon;
     })(DDD.Entity);
@@ -79,16 +92,16 @@ var POKEDEX;
 (function (POKEDEX) {
     var expect = chai.expect;
 
-    describe("Name", function () {
-        var mewtwo = new POKEDEX.Name('ミュウツー');
-        var mew = new POKEDEX.Name('ミュウ');
+    describe("PokemonName", function () {
+        var mewtwo = new POKEDEX.PokemonName('ミュウツー');
+        var mew = new POKEDEX.PokemonName('ミュウ');
 
         it("should be mewtwo to equal `ミュウツー`", function () {
-            expect(mewtwo.getName()).to.equal('ミュウツー');
+            expect(mewtwo.getPokemonName()).to.equal('ミュウツー');
         });
 
         it("should be mewtwo to not equal to mew", function () {
-            expect(mewtwo.getName()).to.not.equal(mew.getName());
+            expect(mewtwo.getPokemonName()).to.not.equal(mew.getPokemonName());
         });
     });
 })(POKEDEX || (POKEDEX = {}));
@@ -98,10 +111,10 @@ var POKEDEX;
 
     describe("Pokemon", function () {
         var id_a = new POKEDEX.PokemonID('12345');
-        var mew_a = new POKEDEX.Pokemon(id_a, new POKEDEX.Name('ミュウツー'));
+        var mew_a = new POKEDEX.Pokemon(id_a, new POKEDEX.PokemonName('ミュウツー'));
 
         var id_b = new POKEDEX.PokemonID('67890');
-        var mew_b = new POKEDEX.Pokemon(id_b, new POKEDEX.Name('ミュウツー'));
+        var mew_b = new POKEDEX.Pokemon(id_b, new POKEDEX.PokemonName('ミュウツー'));
 
         it("should be mew_a has id_a", function () {
             expect(mew_a.getIdentity()).to.equals(id_a);
@@ -119,11 +132,11 @@ var POKEDEX;
             expect(mew_a.equals(mew_b)).to.not.be.true;
         });
 
-        it("should be mew_a has name `ミュウツー`", function () {
+        it("should be mew_a has pokemonName `ミュウツー`", function () {
             expect(mew_a.getName()).to.equals('ミュウツー');
         });
 
-        it("should be mew_b has name `ミュウツー`", function () {
+        it("should be mew_b has pokemonName `ミュウツー`", function () {
             expect(mew_b.getName()).to.equals('ミュウツー');
         });
     });
