@@ -97,30 +97,34 @@ var POKEDEX;
     var expect = chai.expect;
 
     describe("Pokemon", function () {
-        var id_150 = new POKEDEX.PokemonID('150');
-        var mewtwo = new POKEDEX.Pokemon(id_150, new POKEDEX.Name('ミュウツー'));
+        var id_a = new POKEDEX.PokemonID('12345');
+        var mew_a = new POKEDEX.Pokemon(id_a, new POKEDEX.Name('ミュウツー'));
 
-        var id_151 = new POKEDEX.PokemonID('151');
-        var mew = new POKEDEX.Pokemon(id_151, new POKEDEX.Name('ミュウ'));
+        var id_b = new POKEDEX.PokemonID('67890');
+        var mew_b = new POKEDEX.Pokemon(id_b, new POKEDEX.Name('ミュウツー'));
 
-        it("should be mewtwo has id_150", function () {
-            expect(mewtwo.getIdentity()).to.equals(id_150);
+        it("should be mew_a has id_a", function () {
+            expect(mew_a.getIdentity()).to.equals(id_a);
         });
 
-        it("should be mewtwo equals to mewtwo", function () {
-            expect(mewtwo.equals(mewtwo)).to.be.true;
+        it("should be mew_a has id_a is `12345`", function () {
+            expect(mew_a.getIdentity().getValue()).to.equals('12345');
         });
 
-        it("should be mewtwo not equals to mew", function () {
-            expect(mewtwo.equals(mew)).to.not.be.true;
+        it("should be mew_a equals to mew_a", function () {
+            expect(mew_a.equals(mew_a)).to.be.true;
         });
 
-        it("should be mewtwo has name `ミュウツー`", function () {
-            expect(mewtwo.getName()).to.equals('ミュウツー');
+        it("should be mew_a not equals to mew_b", function () {
+            expect(mew_a.equals(mew_b)).to.not.be.true;
         });
 
-        it("should be mew has name `ミュウ`", function () {
-            expect(mew.getName()).to.equals('ミュウ');
+        it("should be mew_a has name `ミュウツー`", function () {
+            expect(mew_a.getName()).to.equals('ミュウツー');
+        });
+
+        it("should be mew_b has name `ミュウツー`", function () {
+            expect(mew_b.getName()).to.equals('ミュウツー');
         });
     });
 })(POKEDEX || (POKEDEX = {}));
