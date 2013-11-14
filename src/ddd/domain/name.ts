@@ -2,11 +2,11 @@
 
 module POKEDEX {
 
-    export class PokemonName {
+    export class Name {
 
         constructor(private name: string) {}
 
-        getPokemonName(): string {
+        getName(): string {
             return this.name;
         }
 

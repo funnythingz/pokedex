@@ -34,29 +34,29 @@ var DDD;
 })(DDD || (DDD = {}));
 ;var POKEDEX;
 (function (POKEDEX) {
-    var PokemonName = (function () {
-        function PokemonName(name) {
+    var Name = (function () {
+        function Name(name) {
             this.name = name;
         }
-        PokemonName.prototype.getPokemonName = function () {
+        Name.prototype.getName = function () {
             return this.name;
         };
-        return PokemonName;
+        return Name;
     })();
-    POKEDEX.PokemonName = PokemonName;
+    POKEDEX.Name = Name;
 })(POKEDEX || (POKEDEX = {}));
 ;var POKEDEX;
 (function (POKEDEX) {
-    var PokemonNo = (function () {
-        function PokemonNo(no) {
-            this.no = no;
+    var Numero = (function () {
+        function Numero(numero) {
+            this.numero = numero;
         }
-        PokemonNo.prototype.getNo = function () {
-            return this.no;
+        Numero.prototype.getNumero = function () {
+            return this.numero;
         };
-        return PokemonNo;
+        return Numero;
     })();
-    POKEDEX.PokemonNo = PokemonNo;
+    POKEDEX.Numero = Numero;
 })(POKEDEX || (POKEDEX = {}));
 ;var __extends = this.__extends || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -73,7 +73,7 @@ var POKEDEX;
             this.name = name;
         }
         Pokemon.prototype.getName = function () {
-            return this.name.getPokemonName();
+            return this.name.getName();
         };
         return Pokemon;
     })(DDD.Entity);

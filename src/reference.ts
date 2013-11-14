@@ -9,5 +9,5 @@
 /// <reference path="ddd/base/identity.ts" />
 
 /// <reference path="ddd/domain/pokemon.ts" />
-/// <reference path="ddd/domain/pokemon-name.ts" />
-/// <reference path="ddd/domain/pokemon-no.ts" />
+/// <reference path="ddd/domain/name.ts" />
+/// <reference path="ddd/domain/numero.ts" />

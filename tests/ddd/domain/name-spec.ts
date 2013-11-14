@@ -6,15 +6,15 @@ module POKEDEX {
 
     describe("PokemonName", function() {
 
-        var mewtwo: PokemonName = new PokemonName('ミュウツー');
-        var mew: PokemonName =    new PokemonName('ミュウ');
+        var mewtwo: Name = new Name('ミュウツー');
+        var mew: Name =    new Name('ミュウ');
 
         it("should be mewtwo to equal `ミュウツー`", function() {
-            expect(mewtwo.getPokemonName()).to.equal('ミュウツー');
+            expect(mewtwo.getName()).to.equal('ミュウツー');
         });
 
         it("should be mewtwo to not equal to mew", function() {
-            expect(mewtwo.getPokemonName()).to.not.equal(mew.getPokemonName());
+            expect(mewtwo.getName()).to.not.equal(mew.getName());
         });
 
     });

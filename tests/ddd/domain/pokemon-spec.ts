@@ -7,10 +7,10 @@ module POKEDEX {
     describe("Pokemon", function() {
 
         var id_a: PokemonID = new PokemonID('12345');
-        var mew_a: Pokemon =  new Pokemon(id_a, new PokemonName('ミュウツー'));
+        var mew_a: Pokemon =  new Pokemon(id_a, new Name('ミュウツー'));
 
         var id_b: PokemonID = new PokemonID('67890');
-        var mew_b: Pokemon =  new Pokemon(id_b, new PokemonName('ミュウツー'));
+        var mew_b: Pokemon =  new Pokemon(id_b, new Name('ミュウツー'));
 
         it("should be mew_a has id_a", function() {
             expect(mew_a.getIdentity()).to.equals(id_a);
@@ -28,11 +28,11 @@ module POKEDEX {
             expect(mew_a.equals(mew_b)).to.not.be.true;
         });
 
-        it("should be mew_a has pokemonName `ミュウツー`", function() {
+        it("should be mew_a has name `ミュウツー`", function() {
             expect(mew_a.getName()).to.equals('ミュウツー');
         });
 
-        it("should be mew_b has pokemonName `ミュウツー`", function() {
+        it("should be mew_b has name `ミュウツー`", function() {
             expect(mew_b.getName()).to.equals('ミュウツー');
         });
 

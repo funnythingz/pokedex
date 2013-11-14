@@ -5,12 +5,12 @@ module POKEDEX {
     export class Pokemon extends DDD.Entity<DDD.Identity<string>> {
 
         constructor(identity: DDD.Identity<string>,
-                    private name: PokemonName) {
+                    private name: Name) {
             super(identity);
         }
 
         getName(): string {
-            return this.name.getPokemonName();
+            return this.name.getName();
         }
 
     }
