@@ -17,9 +17,9 @@ Template.body.events({
 });
 ;Template.header.helpers({
     title: function () {
-        return "POKEDEX";
+        return "Pokebooks";
     },
     description: function () {
-        return "This is `MY POKEDEX`";
+        return "This is `my pokebooks`.";
     }
 });

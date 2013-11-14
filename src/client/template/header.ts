@@ -1,10 +1,11 @@
 Template.header.helpers({
+
     title: ()=> {
-        return "POKEDEX";
+        return "Pokebooks";
     },
 
     description: ()=> {
-        return "This is `MY POKEDEX`";
+        return "This is `my pokebooks`.";
     }
 
 });
