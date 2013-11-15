@@ -26,10 +26,21 @@ module.exports = (grunt)->
       base:
         src: ['src/**/*.ts', 'tests/**/*.ts']
 
+    compass:
+      dist:
+        options:
+          config: 'config.rb'
+
     watch:
       ts:
         files: ['src/**/*.ts', 'tests/**/*.ts']
         tasks: ['typescript', 'concat', 'clean', 'copy']
+        options:
+          atBegin: true
+
+      css:
+        files: ['sass/**/*.scss']
+        tasks: ['compass']
         options:
           atBegin: true
 
@@ -55,7 +66,8 @@ module.exports = (grunt)->
   grunt.loadNpmTasks('grunt-typescript')
   grunt.loadNpmTasks('grunt-contrib-concat')
   grunt.loadNpmTasks('grunt-contrib-watch')
+  grunt.loadNpmTasks('grunt-contrib-compass')
   grunt.loadNpmTasks('grunt-contrib-clean')
   grunt.loadNpmTasks('grunt-contrib-copy')
 
-  grunt.registerTask('default', ['typescript', 'concat', 'clean', 'copy'])
+  grunt.registerTask('default', ['typescript', 'concat', 'clean', 'compass', 'copy'])
