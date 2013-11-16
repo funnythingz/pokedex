@@ -7,14 +7,6 @@ module.exports = (grunt)->
         src: ['src/ddd/**/*.js']
         dest: 'build/pokedex.js'
 
-      client:
-        src: ['src/client/**/*.js']
-        dest: 'meteor/client/client.js'
-
-      server:
-        src: ['src/server/**/*.js']
-        dest: 'meteor/server/server.js'
-
       test:
         src: ['build/pokedex.js', 'tests/**/*.js']
         dest: 'build/pokedex-test.js'
@@ -26,48 +18,20 @@ module.exports = (grunt)->
       base:
         src: ['src/**/*.ts', 'tests/**/*.ts']
 
-    compass:
-      dist:
-        options:
-          config: 'config.rb'
-
     watch:
       ts:
         files: ['src/**/*.ts', 'tests/**/*.ts']
-        tasks: ['typescript', 'concat', 'clean', 'copy']
+        tasks: ['typescript', 'concat', 'clean']
         options:
           atBegin: true
 
-      css:
-        files: ['sass/**/*.scss']
-        tasks: ['compass']
-        options:
-          atBegin: true
-
-      html:
-        files: ['template/**/*.html']
-        tasks: ['clean', 'copy']
-        options:
-          atBegin: true
-
-    clean: ['src/**/*.js', 'tests/**/*.js', 'meteor/template/**/*.html']
-
-    copy:
-      template:
-        src:  'template/**/*'
-        dest: 'meteor/'
-
-      app:
-        src:  'build/pokedex.js'
-        dest: 'meteor/pokedex.js'
+    clean: ['src/**/*.js', 'tests/**/*.js']
 
   })
 
   grunt.loadNpmTasks('grunt-typescript')
   grunt.loadNpmTasks('grunt-contrib-concat')
   grunt.loadNpmTasks('grunt-contrib-watch')
-  grunt.loadNpmTasks('grunt-contrib-compass')
   grunt.loadNpmTasks('grunt-contrib-clean')
-  grunt.loadNpmTasks('grunt-contrib-copy')
 
-  grunt.registerTask('default', ['typescript', 'concat', 'clean', 'compass', 'copy'])
+  grunt.registerTask('default', ['typescript', 'concat', 'clean'])
