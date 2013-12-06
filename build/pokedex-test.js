@@ -1,4 +1,4 @@
-var DDD;
+;var DDD;
 (function (DDD) {
     var Entity = (function () {
         function Entity(identity) {
@@ -15,7 +15,7 @@ var DDD;
     })();
     DDD.Entity = Entity;
 })(DDD || (DDD = {}));
-;var DDD;
+;;var DDD;
 (function (DDD) {
     var Identity = (function () {
         function Identity(value) {
@@ -141,3 +141,4 @@ var POKEDEX;
         });
     });
 })(POKEDEX || (POKEDEX = {}));
+;
