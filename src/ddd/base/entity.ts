@@ -1,4 +1,4 @@
-/// <reference path="../../reference.ts" />
+/// <reference path="identity.ts" />
 
 module DDD {
 

@@ -1,5 +1,3 @@
-/// <reference path="../../reference.ts" />
-
 module DDD {
 
     export class Identity<T> {

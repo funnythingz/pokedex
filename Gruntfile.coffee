@@ -1,4 +1,12 @@
 module.exports = (grunt)->
+
+  grunt.loadNpmTasks('grunt-typescript')
+  grunt.loadNpmTasks('grunt-contrib-concat')
+  grunt.loadNpmTasks('grunt-contrib-watch')
+  grunt.loadNpmTasks('grunt-contrib-clean')
+
+  grunt.registerTask('default', ['typescript', 'concat', 'clean'])
+
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json')
 
@@ -14,26 +22,19 @@ module.exports = (grunt)->
       options:
         separator: ';'
 
-    ts:
+    typescript:
       base:
         src: ['src/**/*.ts', 'tests/**/*.ts']
         options:
           sourceMap: false
 
     watch:
-      ts:
+      typescript:
         files: ['src/**/*.ts', 'tests/**/*.ts']
-        tasks: ['ts', 'concat', 'clean']
+        tasks: ['typescript', 'concat', 'clean']
         options:
           atBegin: true
 
-    clean: ['src/**/*.js', 'tests/**/*.js', 'tscommand.tmp.txt']
+    clean: ['src/**/*.js', 'tests/**/*.js']
 
   })
-
-  grunt.loadNpmTasks('grunt-ts')
-  grunt.loadNpmTasks('grunt-contrib-concat')
-  grunt.loadNpmTasks('grunt-contrib-watch')
-  grunt.loadNpmTasks('grunt-contrib-clean')
-
-  grunt.registerTask('default', ['ts', 'concat', 'clean'])
