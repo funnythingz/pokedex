@@ -1,3 +1,45 @@
+Template.body.helpers({
+    greeting: function () {
+        return "ahya";
+    }
+});
+
+Template.body.events({
+    'click .hoge': function (event) {
+        event.preventDefault();
+        console.log("hoge");
+    }
+});
+Template.footer.helpers({
+    copyright: function () {
+        return "funnythingz";
+    }
+});
+Template.header.helpers({
+    title: function () {
+        return "Pokebooks";
+    },
+    description: function () {
+        return "This is `my pokebooks`.";
+    }
+});
+var DDD;
+(function (DDD) {
+    var Identity = (function () {
+        function Identity(value) {
+            this.value = value;
+        }
+        Identity.prototype.getValue = function () {
+            return this.value.toString();
+        };
+
+        Identity.prototype.getIdentity = function () {
+            return this.value;
+        };
+        return Identity;
+    })();
+    DDD.Identity = Identity;
+})(DDD || (DDD = {}));
 var DDD;
 (function (DDD) {
     var Entity = (function () {
@@ -15,50 +57,7 @@ var DDD;
     })();
     DDD.Entity = Entity;
 })(DDD || (DDD = {}));
-;var DDD;
-(function (DDD) {
-    var Identity = (function () {
-        function Identity(value) {
-            this.value = value;
-        }
-        Identity.prototype.getValue = function () {
-            return this.value.toString();
-        };
-
-        Identity.prototype.getIdentity = function () {
-            return this.value;
-        };
-        return Identity;
-    })();
-    DDD.Identity = Identity;
-})(DDD || (DDD = {}));
-;var POKEDEX;
-(function (POKEDEX) {
-    var Name = (function () {
-        function Name(name) {
-            this.name = name;
-        }
-        Name.prototype.getName = function () {
-            return this.name;
-        };
-        return Name;
-    })();
-    POKEDEX.Name = Name;
-})(POKEDEX || (POKEDEX = {}));
-;var POKEDEX;
-(function (POKEDEX) {
-    var Numero = (function () {
-        function Numero(numero) {
-            this.numero = numero;
-        }
-        Numero.prototype.getNumero = function () {
-            return this.numero;
-        };
-        return Numero;
-    })();
-    POKEDEX.Numero = Numero;
-})(POKEDEX || (POKEDEX = {}));
-;var __extends = this.__extends || function (d, b) {
+var __extends = this.__extends || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
     __.prototype = b.prototype;
@@ -88,7 +87,35 @@ var POKEDEX;
     })(DDD.Identity);
     POKEDEX.PokemonID = PokemonID;
 })(POKEDEX || (POKEDEX = {}));
-;var POKEDEX;
+var POKEDEX;
+(function (POKEDEX) {
+    var Numero = (function () {
+        function Numero(numero) {
+            this.numero = numero;
+        }
+        Numero.prototype.getNumero = function () {
+            return this.numero;
+        };
+        return Numero;
+    })();
+    POKEDEX.Numero = Numero;
+})(POKEDEX || (POKEDEX = {}));
+var POKEDEX;
+(function (POKEDEX) {
+    var Name = (function () {
+        function Name(name) {
+            this.name = name;
+        }
+        Name.prototype.getName = function () {
+            return this.name;
+        };
+        return Name;
+    })();
+    POKEDEX.Name = Name;
+})(POKEDEX || (POKEDEX = {}));
+Meteor.startup(function () {
+});
+var POKEDEX;
 (function (POKEDEX) {
     var expect = chai.expect;
 
@@ -105,7 +132,7 @@ var POKEDEX;
         });
     });
 })(POKEDEX || (POKEDEX = {}));
-;var POKEDEX;
+var POKEDEX;
 (function (POKEDEX) {
     var expect = chai.expect;
 
@@ -141,4 +168,4 @@ var POKEDEX;
         });
     });
 })(POKEDEX || (POKEDEX = {}));
-;
+//# sourceMappingURL=pokedex.js.map

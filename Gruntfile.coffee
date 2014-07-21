@@ -1,40 +1,34 @@
 module.exports = (grunt)->
 
-  grunt.loadNpmTasks('grunt-typescript')
-  grunt.loadNpmTasks('grunt-contrib-concat')
-  grunt.loadNpmTasks('grunt-contrib-watch')
-  grunt.loadNpmTasks('grunt-contrib-clean')
+    require('load-grunt-tasks')(grunt)
 
-  grunt.registerTask('default', ['typescript', 'concat', 'clean'])
+    grunt.registerTask('default', ['typescript', 'concat', 'clean'])
 
-  grunt.initConfig({
-    pkg: grunt.file.readJSON('package.json')
+    grunt.initConfig({
+        pkg: grunt.file.readJSON('package.json')
 
-    concat:
-      app:
-        src: ['src/ddd/**/*.js']
-        dest: 'build/pokedex.js'
+        concat:
+            test:
+                src: ['build/pokedex.js', 'tests/**/*.js']
+                dest: 'build/pokedex-test.js'
 
-      test:
-        src: ['build/pokedex.js', 'tests/**/*.js']
-        dest: 'build/pokedex-test.js'
+            options:
+                separator: ';'
 
-      options:
-        separator: ';'
+        typescript:
+            base:
+                src: ['src/**/*.ts', 'tests/**/*.ts']
+                dest: 'build/pokedex.js'
+                options:
+                    sourceMap: true
 
-    typescript:
-      base:
-        src: ['src/**/*.ts', 'tests/**/*.ts']
-        options:
-          sourceMap: false
+        watch:
+            typescript:
+                files: ['src/**/*.ts', 'tests/**/*.ts']
+                tasks: ['typescript', 'concat', 'clean']
+                options:
+                    atBegin: true
 
-    watch:
-      typescript:
-        files: ['src/**/*.ts', 'tests/**/*.ts']
-        tasks: ['typescript', 'concat', 'clean']
-        options:
-          atBegin: true
+        clean: ['src/**/*.js', 'tests/**/*.js']
 
-    clean: ['src/**/*.js', 'tests/**/*.js']
-
-  })
+    })

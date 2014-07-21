@@ -1,16 +1,17 @@
 {
-  "name": "pokedex",
-  "version": "0.0.0",
-  "author": "funnythingz",
-  "devDependencies": {
-    "grunt": "~0.4.1",
-    "grunt-typescript": "latest",
-    "grunt-contrib-clean": "~0.5.0",
-    "grunt-contrib-watch": "~0.5.1",
-    "grunt-contrib-compass": "~0.5.0",
-    "grunt-contrib-concat": "~0.3.0",
-    "grunt-contrib-copy": "",
-    "testem": "~0.5.3",
-    "chai": "~1.8.0"
-  }
+    "name": "pokedex",
+    "version": "0.0.0",
+    "author": "funnythingz",
+    "devDependencies": {
+        "grunt": "~0.4.1",
+        "load-grunt-tasks": "~0.1.0",
+        "grunt-typescript": "latest",
+        "grunt-contrib-clean": "~0.5.0",
+        "grunt-contrib-watch": "~0.5.1",
+        "grunt-contrib-compass": "~0.5.0",
+        "grunt-contrib-concat": "~0.3.0",
+        "grunt-contrib-copy": "",
+        "testem": "~0.5.3",
+        "chai": "~1.8.0"
+    }
 }
